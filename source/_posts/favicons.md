@@ -1,6 +1,6 @@
 ---
-title: '02 - Favicons'
-date: 2021-03-12
+title: '03 - Favicons'
+date: 2021-11-21
 image: https://res.cloudinary.com/artisanstatic/icons.jpg
 comments: false
 ---
