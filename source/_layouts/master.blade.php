@@ -47,7 +47,7 @@
     </section>
 
     <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
-    @includeWhen($page->production, '_partials.analytics')
+    @includeWhen($page->production && $page->services->analytics, '_partials.analytics')
     @include('_partials.cms.identity_redirect')
 </body>
 </html>

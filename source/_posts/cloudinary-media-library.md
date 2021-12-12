@@ -1,12 +1,27 @@
 ---
-title: '08 - Cloudinary Media Library'
-date: 2021-03-18
+title: '10 - Cloudinary Media Library'
+date: 2021-11-28
 image: https://res.cloudinary.com/artisanstatic/photos.jpg
 comments: false
 ---
 Register on [Cloudinary](https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/qq2slabgpy590znlop4j).
 
 Go to `config.php`, add your **cloud name** and **API key** under the `services` key.
+
+```php
+<?php
+
+return [
+    // ...
+    'services' => [
+        'cloudinary' => [
+            'cloudName' => 'artisanstatic',
+            'apiKey' => '365895137117119',
+        ],
+    ],
+    // ...
+];
+```
 
 Now you can use the `media()` helper in your Blade templates to easily reference files in your Cloudinary library.
 

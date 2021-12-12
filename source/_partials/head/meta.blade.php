@@ -14,7 +14,7 @@
 <meta name="twitter:title" content="{{ $page->title ?: $page->site->title }}">
 <meta name="twitter:description" content="{!! $page->excerpt() ?: $page->site->description !!}">
 <meta name="twitter:image" content="{{ $page->image ?: media($page->site->image) }}">
-<meta name="twitter:creator" content="{{ "@{$page->owner->twitter}" }}">
-<meta name="twitter:site" content="{{ "@{$page->owner->twitter}" }}">
+<meta name="twitter:creator" content="{{ '@' . basename($page->links->twitter) }}">
+<meta name="twitter:site" content="{{ '@' . basename($page->links->twitter) }}">
 <meta name="twitter:card" content="summary">
 <!-- end seo/social -->

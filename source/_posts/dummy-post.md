@@ -1,6 +1,6 @@
 ---
 title: '01 - Dummy Post'
-date: 2020-02-28
+date: 2020-10-28
 tags:
   - css
   - javascript
