@@ -1,38 +1,29 @@
-import notyf from './notyf'
-
-const fakeSend = () => new Promise((resolve) => setTimeout(resolve, 2000));
-
-const send = (form) => {
-    return fetch(form.action, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-        body: JSON.stringify(Object.values(form.elements).slice(0, -1)
-            .reduce((acc, input) => ({ ...acc, [input.name]: input.value }), {})
-        )
-    })
-    .then((response) => {
-        return response.status === 200 ? response : Promise.reject({ response })
-    });
-};
+import notyf from "./notyf";
 
 const contactForm = document.forms[0];
 
 if (contactForm) {
-    contactForm.onsubmit = (e) => {
-        e.preventDefault();
-        e.target.elements['submit'].disabled = true;
+  // init formcarry
+  formcarry({
+    form: "1BO-aim4JQV",
+    element: "#my-contact",
+    // Success callback, you can show alert messages
+    // or redirect the user in this function
+    onSuccess: function (response) {
+      notyf.success("Your message has been sent.");
+      contactForm.reset();
+      contactForm.elements["submit"].disabled = false;
+    },
+    // Error callback, a good place to show errors 🗿
+    onError: function (error) {
+      notyf.error("Sending failed, try again later.");
+      console.log(error);
+      contactForm.elements["submit"].disabled = false;
+    },
+  });
 
-        fakeSend(contactForm)
-            .then((response) => {
-                notyf.success('Your message has been sent.');
-                contactForm.reset();
-            })
-            .catch((error) => {
-                notyf.error('Sending failed, try again later.');
-                console.log(error.response);
-            })
-            .finally(() => {
-                contactForm.elements['submit'].disabled = false;
-            });
-    };
+  contactForm.onsubmit = (e) => {
+    e.preventDefault();
+    e.target.elements["submit"].disabled = true;
+  };
 }
