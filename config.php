@@ -4,16 +4,16 @@ return [
     'production' => false,
     'baseUrl' => 'https://artisanstatic.netlify.app',
     'site' => [
-        'title' => 'My Jigsaw Blog',
-        'description' => 'Personal blog of John Doe.',
+        'title' => 'My Blog',
+        'description' => 'Personal blog of Tam Nguyen.',
         'image' => 'default-share.png',
     ],
     'owner' => [
-        'name' => 'John Doe',
+        'name' => 'Tam Nguyen',
     ],
     'links' => [
-        'twitter' => 'https://twitter.com/johndoe',
-        'github' => 'https://github.com/johndoe',
+        'twitter' => 'https://twitter.com/MinhTam70910140',
+        'github' => 'https://github.com/MinhTamCK',
     ],
     'services' => [
         'cmsVersion' => '~2.10',
