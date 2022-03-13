@@ -17,12 +17,12 @@ return [
     ],
     'services' => [
         'cmsVersion' => '~2.10',
-        'analytics' => 'UA-XXXXX-Y',
+        'analytics' => 'UA-96090593-2',
         'disqus' => 'artisanstatic',
         'formcarry' => 'XXXXXXXXXXXX',
         'cloudinary' => [
-            'cloudName' => 'artisanstatic',
-            'apiKey' => '365895137117119',
+            'cloudName' => 'codepi',
+            'apiKey' => '575468481576612',
         ],
     ],
     'collections' => [
