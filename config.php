@@ -2,9 +2,9 @@
 
 return [
     'production' => false,
-    'baseUrl' => 'https://artisanstatic.netlify.app',
+    'baseUrl' => 'https://codepi.xyz',
     'site' => [
-        'title' => 'My Blog',
+        'title' => 'Tam Blog',
         'description' => 'Personal blog of Tam Nguyen.',
         'image' => 'default-share.png',
     ],
@@ -18,7 +18,7 @@ return [
     'services' => [
         'cmsVersion' => '~2.10',
         'analytics' => 'UA-96090593-2',
-        'disqus' => 'artisanstatic',
+        'disqus' => 'codepi',
         'formcarry' => 'XXXXXXXXXXXX',
         'cloudinary' => [
             'cloudName' => 'codepi',
