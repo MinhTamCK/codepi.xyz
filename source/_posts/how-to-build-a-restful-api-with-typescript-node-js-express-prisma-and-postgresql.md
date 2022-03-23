@@ -19,14 +19,14 @@ comments: true
 
 Step 1 — Creating Your TypeScript Project
 
-
 Step 2 — Setting Up Prisma with PostgreSQL
-
 
 Step 3 — Defining Your Data Model and Creating Database Tables
 
-
 Step 4 — Exploring Prisma Client Queries in a Plain Script
 
-
 Step 5 — Implementing Your First REST API Route
+
+Step 6 — Implementing 3 layers architecture
+
+Step 7 — Deploy to cloud service
