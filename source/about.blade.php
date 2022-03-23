@@ -5,7 +5,7 @@
 @section('content')
 <h1>About</h1>
 
-<p>My name is {{ $page->owner->name }}. I'm a web developer with over 7 years of experience. Enthusiastic frontend developer who loves to build high impact, meaningful products, enjoys working with flexible times, places.</p>
+<p>I'm a web developer with over 7 years of experience. Enthusiastic frontend developer who loves to build high impact, meaningful products, enjoys working with flexible times, places.</p>
 
 <h2>Links:</h2>
 
