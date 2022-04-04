@@ -51,7 +51,6 @@ function Program() {
 }
 
 export default Program
-
 ```
 
 In the above code, we are using the dynamic component provided by the framework to load our login button dynamically. You can pass a component name, an array of module names, and a function inside the component that will be invoked when the module is loaded.
@@ -62,14 +61,11 @@ Caching improves response times and reduces bandwidth usage by serving content f
 
 ```
 // For API routes:
-
 export default function handler(req, res) {
        res.setHeader('Cache-Control', 's-maxage=10'); 
 }
 
-
 // For server-side rendering:
-
 export async function getServerSideProps({ req, res }) {
     res.setHeader(
       'Cache-Control',
@@ -79,7 +75,6 @@ export async function getServerSideProps({ req, res }) {
         props: {},
     }
 }
-
 ```
 
 For static files and assets, you don’t have to manually add caching; Next.js automatically adds them.
@@ -154,5 +149,6 @@ By setting the value of the `strategy` prop in the `next/script` component, 
 * **`beforeInteractive`:** The script will be loaded on the server side before self-bundled JavaScript is executed.
 * **`lazyOnload`:** The script will be loaded after all other resources are loaded.
 
-\
+
+
 **source**: https://stackoverflow.blog/2022/03/30/best-practices-to-increase-the-speed-for-next-js-apps/
