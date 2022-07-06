@@ -33,3 +33,7 @@ Count-min sketch: <https://florian.github.io/count-min-sketch/>
 Hierarchical timing wheels: <https://www.cse.wustl.edu/~cdgill/courses/cs6874/TimingWheels.ppt>
 
 Operational transformation: <https://en.wikipedia.org/wiki/Operational_transformation>
+
+System Design YouTube channel: <https://www.youtube.com/channel/UCZgt6AzoyjslHTC9dz0UoTw>
+
+**Source**: https://blog.bytebytego.com/p/algorithms-you-should-know-before
