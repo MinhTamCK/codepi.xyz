@@ -6,7 +6,7 @@
     <h1>Posts</h1>
 
     <ul>
-        @forelse ($posts->sortBy('title') as $post)
+        @forelse ($posts->sortByDesc('date') as $post)
             <li>
                 <a href="{{ $post->getPath() }}">{{ $post->title }}</a>
                 <small>{{ $post->prettyDate() }}</small>
