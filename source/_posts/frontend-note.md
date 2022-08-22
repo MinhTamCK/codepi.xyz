@@ -1,5 +1,5 @@
 ---
-title: FrontEnd Note
+title: Frontend Note
 date: 2022-07-05
 tags:
   - note
@@ -8,3 +8,4 @@ image: https://play-lh.googleusercontent.com/vSNQds6F5roxdN4-a16JnQ9dWQVSZZ8OH4-
 comments: true
 ---
 * [Resolving duplicate packages in your bundle](https://github.com/darrenscerri/duplicate-package-checker-webpack-plugin#resolving-duplicate-packages-in-your-bundle)
+* [Understand JavaScript: V8 Engine](https://garden.bradwoods.io/blueprints/js-engine/basic)
