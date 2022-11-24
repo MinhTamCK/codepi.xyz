@@ -1,5 +1,5 @@
 ---
-title: Frontend Note
+title: My note
 date: 2022-07-05
 tags:
   - note
@@ -10,5 +10,8 @@ comments: true
 * [Resolving duplicate packages in your bundle](https://github.com/darrenscerri/duplicate-package-checker-webpack-plugin#resolving-duplicate-packages-in-your-bundle)
 * [Understand JavaScript: V8 Engine](https://garden.bradwoods.io/blueprints/js-engine/basic)
 * [Verify KYC and AML](https://sumsub.com)
-
   [](https://complyadvantage.com/insights/topic/aml-compliance/)
+* [Javascript Playground](https://playcode.io/)
+* [Document](https://www.docz.site/)
+* [Learn to code blockchain](https://cryptozombies.io/)
+* [Learn sql](https://sqlbolt.com/)
