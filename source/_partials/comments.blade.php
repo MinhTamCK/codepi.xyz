@@ -1,4 +1,4 @@
-<div id="disqus_thread"></div>
+<!-- <div id="disqus_thread"></div>
 <script>
 var disqus_config = function () {
     this.page.url = '{{ $page->getUrl() }}';
@@ -13,4 +13,4 @@ var disqus_config = function () {
     (d.head || d.body).appendChild(s);
 })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> -->
