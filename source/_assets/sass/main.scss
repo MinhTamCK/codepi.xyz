@@ -1,18 +1,23 @@
 // Tacit - CSS Framework for Dummies, Without Classes
-@import url('https://unpkg.com/tacit-css@1.5.5/dist/tacit-css-1.5.5.min.css');
+@import url("https://unpkg.com/tacit-css@1.5.5/dist/tacit-css-1.5.5.min.css");
 
 @import "~highlight.js/scss/a11y-dark";
 @import "~notyf/notyf.min";
 
 section h1:first-child {
-    margin-top: 18px;
+  margin-top: 18px;
 }
 
 button[data-sharer] {
-    color: #fff;
+  color: #fff;
 }
 
-.test-css {
-    padding: 5px;
-    border: 2px solid blue;
+.share-button {
+  margin-bottom: 0;
+  font-size: 12px;
+  padding: 6px 15px;
+}
+
+.share-button:last-child {
+  margin-right: 0;
 }
