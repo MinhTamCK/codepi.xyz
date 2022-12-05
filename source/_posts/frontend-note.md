@@ -15,3 +15,4 @@ comments: true
 * [Document](https://www.docz.site/)
 * [Learn to code blockchain](https://cryptozombies.io/)
 * [Learn sql](https://sqlbolt.com/)
+* [Loads environment variables from .env for nodejs projects.](https://github.com/motdotla/dotenv)
