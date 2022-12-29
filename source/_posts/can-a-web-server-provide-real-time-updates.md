@@ -4,7 +4,7 @@ date: 2022-12-29
 image: https://pbs.twimg.com/media/FlFEnvpaMAUncs6?format=jpg&name=4096x4096
 comments: true
 ---
-> An HTTP server cannot automatically initiate a connection to a browser. As a result, the web browser is the initiator. What should we do next to get real-time updates from the HTTP server
+An HTTP server cannot automatically initiate a connection to a browser. As a result, the web browser is the initiator. What should we do next to get real-time updates from the HTTP server
 
 Both the web browser and the HTTP server could be responsible for this task.
 
@@ -14,5 +14,4 @@ HTTP server and web browser cooperate: WebSocket or SSE (server-sent event). In 
 
 The difference is that SSE is uni-directional so the browser cannot send new request to server, while WebSocket is fully-duplex so the browser could keep sending new requests
 
-\
 F﻿rom: [Alex Xu](https://twitter.com/alexxubyte)
