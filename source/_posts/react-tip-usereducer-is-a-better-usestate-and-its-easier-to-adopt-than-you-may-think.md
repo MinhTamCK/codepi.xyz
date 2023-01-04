@@ -10,3 +10,7 @@ comments: false
 In the React hooks [docs](https://reactjs.org/docs/hooks-reference.html#usereducer), it’s noted like this:
 
 > useReducer is usually preferable to useState when you have complex state logic that involves multiple sub-values or when the next state depends on the previous one. useReducer also lets you optimize performance for components that trigger deep updates because you can pass dispatch down instead of callbacks.
+
+![](https://pbs.twimg.com/media/FkWhrzHXkAA5tJS?format=jpg&name=large)
+
+![](https://pbs.twimg.com/media/FkWhrzHXgAMy94c?format=jpg&name=large)
