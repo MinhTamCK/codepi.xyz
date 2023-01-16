@@ -16,3 +16,6 @@ comments: true
 * [Learn to code blockchain](https://cryptozombies.io/)
 * [Learn sql](https://sqlbolt.com/)
 * [Loads environment variables from .env for nodejs projects.](https://github.com/motdotla/dotenv)
+* [Why waste time reinventing UI components?](https://www.radix-ui.com/)
+* [Motion library for React to animate components with ease](https://www.framer.com/motion/)
+* [Beautifully simple, pixel-perfect icons](https://lucide.dev/)
