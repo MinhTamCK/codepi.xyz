@@ -20,9 +20,9 @@ This should be a wake-up call for anyone who thinks they can build a long-term c
 
 The truth is, businesses change, and when they do, employees can be let go.
 
-My advice? Don't get too comfortable in any one job.
+My advice? **Don't get too comfortable in any one job.**
 
-Instead, you should always be looking for ways to develop your skills and explore new opportunities.
+Instead, you should **always be looking for ways to develop your skills and explore new opportunities.**
 
 Invest in yourself.
 
@@ -30,7 +30,8 @@ You are your own brand. Work on it, it will stay with you throughout your life!
 
 F﻿rom: [Arslan Ahmad](https://www.linkedin.com/in/arslanahmad?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACdXlIBSIWCXfeStv-9Dd9-ej-_9oH-Fxc)
 
--﻿---------------------
+\-﻿----------------------﻿----------------------﻿----------------------﻿---------------
+
 💥 Unpopular oppinion:
 
 𝗧𝗵𝗲𝗿𝗲 𝗶𝘀 𝗻𝗼 𝘀𝘂𝗰𝗵 𝘁𝗵𝗶𝗻𝗴 𝗮𝘀 𝗮 𝘀𝘁𝗮𝗯𝗹𝗲 𝗷𝗼𝗯!
