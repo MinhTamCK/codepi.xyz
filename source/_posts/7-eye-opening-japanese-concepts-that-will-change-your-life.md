@@ -24,14 +24,17 @@ comments: false
 >    Preserve your dignity during tough times. Show emotional maturity and self-control,
 >    even when faced with challenges. Remember to be patient, resilient,
 >    and understanding.
+
 5. Oubaitori
 >    Don't compare yourself to others. Everyone has a different timeline and unique
 >    path. It's important to focus on your own progress, rather than trying to measure yourself
 >    against others.
+
 6. Kaizen
 >    Always seek to improve in all areas
 >    of your life. Even small changes can add up and make a
 >    big impact over time.
+
 7. Shu-Ha-Ri
 >     "When the student is ready, the teacher will appear. When the student is truly ready, the teacher will disappear."
 >
