@@ -20,3 +20,4 @@ comments: true
 * [Motion library for React to animate components with ease](https://www.framer.com/motion/)
 * [Beautifully simple, pixel-perfect icons](https://lucide.dev/)
 * [Public URLs for Localhost](https://pinggy.io/)
+* [Find unused files, dependencies and exports in JavaScript and TypeScript projects](https://knip.dev)
