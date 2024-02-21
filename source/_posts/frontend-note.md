@@ -5,7 +5,7 @@ tags:
   - note
   - fe
 image: https://clickup.com/blog/wp-content/uploads/2020/01/note-taking.png
-comments: true
+comments: false
 ---
 * [Resolving duplicate packages in your bundle](https://github.com/darrenscerri/duplicate-package-checker-webpack-plugin#resolving-duplicate-packages-in-your-bundle)
 * [Understand JavaScript: V8 Engine](https://garden.bradwoods.io/blueprints/js-engine/basic)
@@ -21,3 +21,4 @@ comments: true
 * [Beautifully simple, pixel-perfect icons](https://lucide.dev/)
 * [Public URLs for Localhost](https://pinggy.io/)
 * [Find unused files, dependencies and exports in JavaScript and TypeScript projects](https://knip.dev)
+* [Swiper The Most Modern Mobile Touch Slider](https://swiperjs.com/get-started)
