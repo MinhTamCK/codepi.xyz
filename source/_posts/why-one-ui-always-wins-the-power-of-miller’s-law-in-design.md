@@ -24,7 +24,7 @@ That means just **5 to 9 things** before our brains hit capacity.
 
 Yet most apps and websites throw far more at users—causing overwhelm, confusion, and drop-offs.
 
-> ![Miller’s Law explained](https://pbs.twimg.com/media/Gv6DLSOa4AI-9wF?format=jpg\&name=large)
+> ![Miller’s Law explained](https://pbs.twimg.com/media/Gv6DLSOa4AI-9wF?format=jpg&name=large)
 
 Watch this quick video for a visual breakdown:
 🎥 [Miller’s Law explained in under 1 minute](https://x.com/i/status/1945136397767368887)
@@ -56,7 +56,7 @@ A common issue with modern products is information overload. You open an app and
 * Multiple CTAs competing for attention
 * Long forms asking for everything upfront
 
-> ![UI overload example](https://pbs.twimg.com/media/Gv6DSaCa4AErdYP?format=png\&name=4096x4096)
+> ![UI overload example](https://pbs.twimg.com/media/Gv6DSaCa4AErdYP?format=png&name=4096x4096)
 
 And then we wonder why engagement drops.
 
@@ -72,7 +72,7 @@ Users didn’t know where to look. It was confusing. Engagement tanked.
 
 So we simplified the dashboard to just **5 core metrics**. Immediately, user engagement and retention improved.
 
-> ![Before and after UI](https://pbs.twimg.com/media/Gv6DUoGbYAAHuFz?format=jpg\&name=large)
+> ![Before and after UI](https://pbs.twimg.com/media/Gv6DUoGbYAAHuFz?format=jpg&name=large)
 
 ---
 
@@ -96,8 +96,8 @@ Chunk fields into **groups of 3–5**. Use steps or collapsible sections.
 
 Highlight **5–7 key metrics**. Give everything else lower visual weight or move it to a secondary view.
 
-> ![Guideline visual 1](https://pbs.twimg.com/media/Gv6DV1sbEAAAE7R?format=jpg\&name=large)
-> ![Guideline visual 2](https://pbs.twimg.com/media/Gv6DWFMbcAAR-iE?format=png\&name=900x900)
+> ![Guideline visual 1](https://pbs.twimg.com/media/Gv6DV1sbEAAAE7R?format=jpg&name=large)
+> ![Guideline visual 2](https://pbs.twimg.com/media/Gv6DWFMbcAAR-iE?format=png&name=900x900)
 
 ---
 
@@ -112,8 +112,8 @@ Take a phone number:
 
 Same content, different cognitive load.
 
-> ![Chunking example](https://pbs.twimg.com/media/Gv6DW_1a4AImXVf?format=jpg\&name=large)
-> ![Readable design](https://pbs.twimg.com/media/Gv6DXKqbwAANG6C?format=jpg\&name=medium)
+> ![Chunking example](https://pbs.twimg.com/media/Gv6DW_1a4AImXVf?format=jpg&name=large)
+> ![Readable design](https://pbs.twimg.com/media/Gv6DXKqbwAANG6C?format=jpg&name=medium)
 
 Apply this principle to everything—menus, forms, buttons, stats, even product copy.
 
