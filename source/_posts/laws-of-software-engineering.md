@@ -160,8 +160,7 @@ Strict output, flexible input.
 
 ## 12. YAGNI
 
-"You Aren't
-[4/22/26 12:22 PM] tana-local: Gonna Need It — Don't build functionality until it is necessary."
+"You Aren't Gonna Need It — Don't build functionality until it is necessary."
 
 "Bạn sẽ không cần đâu — Đừng xây dựng chức năng cho đến khi thực sự cần thiết."
 
