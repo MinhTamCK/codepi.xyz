@@ -48,7 +48,6 @@ We don't know how this ends. But history offers warnings, and several scenarios 
 - ~60% **are replaced by AI** (accountants, paralegals, content writers, customer support, junior developers) — long-term unemployment, dependent on welfare where it exists.
 
 ⚫ **Dark — AGI Dissolves the Foundation.** If AI surpasses humans at virtually every cognitive task, the very concept of "a job" may dissolve. The question stops being *"how many hours should we work?"* and becomes *"how does a society distribute wealth when most people are no longer needed for
-[5/6/26 4:07 PM] tana-local: production?"* — a question with no historical precedent.
 
 ---
 
