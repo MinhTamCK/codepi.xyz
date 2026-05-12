@@ -1,4 +1,4 @@
-<?php echo "<?xml version=\"1.0\"?>\n"; ?>
+<?php echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"; ?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>{{ $page->site->title }}</title>
     <link type="application/atom+xml" rel="self" href="{{ $page->getUrl() }}"/>
