@@ -3,13 +3,13 @@
 @section('title', "Posts tagged '{$page->name()}'")
 
 @section('content')
-    <h1>Posts tagged '{{ $page->name() }}'</h1>
+    <h1>Tagged <em>{{ $page->name() }}</em></h1>
 
-    <ul>
-        @forelse ($posts->filter->hasTag($page->name()) as $post)
+    <ul class="post-list">
+        @forelse ($posts->filter->hasTag($page->name())->sortByDesc('date') as $post)
             <li>
+                <span class="date">{{ $post->prettyDate('M j, Y') }}</span>
                 <a href="{{ $post->getPath() }}">{{ $post->title }}</a>
-                <small>{{ $post->prettyDate() }}</small>
             </li>
         @empty
             <p>No posts to show.</p>

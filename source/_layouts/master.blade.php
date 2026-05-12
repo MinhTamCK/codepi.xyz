@@ -15,36 +15,70 @@
     @include('_partials.head.meta')
     @include('_partials.cms.identity_widget')
 
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t) document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+
     <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
 </head>
 
 <body>
-    <section>
-        <header>
+    <div class="wrap">
+        <header class="site-header">
+            <a class="brand" href="/">{{ $page->site->title }}</a>
             <nav>
-                <strong>{{ $page->site->title }}</strong><br>
                 <ul>
-                    <li><a href="/">Home</a></li>
                     <li><a href="/posts">Posts</a></li>
                     <li><a href="/about">About</a></li>
-                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/feed.atom">RSS</a></li>
+                    <li><button class="theme-toggle" type="button" aria-label="Toggle theme" data-theme-toggle>☾</button></li>
                 </ul>
             </nav>
         </header>
 
-        <article>
-            <section>
+        <main>
+            <article>
                 @yield('content')
-            </section>
-        </article>
+            </article>
+        </main>
 
-        <footer>
+        <footer class="site-footer">
+            <small>© <span data-year></span> {{ $page->owner->name }}</small>
             <small>
-                &copy; <span data-year></span> {{ $page->owner->name }} &nbsp;&bull;&nbsp;
-                <a href="/feed.atom">RSS</a>
+                <a href="/feed.atom">RSS</a> ·
+                <a href="https://github.com/MinhTamCK">GitHub</a>
             </small>
         </footer>
-    </section>
+    </div>
+
+    <script>
+        document.querySelectorAll('[data-year]').forEach(function (el) {
+            el.textContent = new Date().getFullYear();
+        });
+        (function () {
+            var btn = document.querySelector('[data-theme-toggle]');
+            if (!btn) return;
+            function sync() {
+                var current = document.documentElement.getAttribute('data-theme');
+                var resolved = current || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                btn.textContent = resolved === 'dark' ? '☀' : '☾';
+            }
+            btn.addEventListener('click', function () {
+                var current = document.documentElement.getAttribute('data-theme');
+                var resolved = current || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                var next = resolved === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+                sync();
+            });
+            sync();
+        })();
+    </script>
 
     <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
     @includeWhen($page->production && $page->services->analytics, '_partials.analytics')

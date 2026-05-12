@@ -5,33 +5,37 @@
 @section('content')
     <h1>{{ $page->title }}</h1>
 
-    @if ($page->image)
-        <img src="{{ $page->image }}" style="object-fit: cover; height: 100%; width: 100%;">
-    @endif
-
-    <p>
-        <strong>{{ $page->prettyDate('F j, Y') }}</strong><br>
-        @foreach ($page->tags as $tag)
-            <a href="/tags/{{ $tag }}">{{ $tag }}</a>
-            {{ $loop->last ? '' : '-' }}
-        @endforeach
+    <p class="post-meta">
+        <time datetime="{{ date('Y-m-d', $page->date) }}">{{ $page->prettyDate('F j, Y') }}</time>
+        @if (count($page->tags))
+            <span class="sep">·</span>
+            @foreach ($page->tags as $tag)
+                <a href="/tags/{{ $tag }}">{{ $tag }}</a>{{ $loop->last ? '' : ', ' }}
+            @endforeach
+        @endif
     </p>
 
-    <blockquote data-phpdate="{{ $page->date }}">
-        <em>WARNING: This post is over a year old. Some of the information this contains may be outdated.</em>
-    </blockquote>
+    @if ($page->image)
+        <img class="post-image" src="{{ $page->image }}" alt="">
+    @endif
 
-    <hr>
+    @php
+        $yearsOld = floor((time() - $page->date) / 31536000);
+    @endphp
+    @if ($yearsOld >= 1)
+        <p class="post-outdated" data-phpdate="{{ $page->date }}">
+            This post is {{ $yearsOld }} {{ $yearsOld === 1.0 ? 'year' : 'years' }} old — some details may be outdated.
+        </p>
+    @endif
 
     @yield('postContent')
 
-    <hr>
+    <div class="post-footer">
+        <p style="margin-bottom: 12px;">Share this post</p>
+        @include('_partials.share')
 
-    @include('_partials.share')
-
-    @if ($page->comments)
-        @include('_partials.comments')
-    @else
-        <p>Comments are not enabled for this post.</p>
-    @endif
+        @if ($page->comments)
+            @include('_partials.comments')
+        @endif
+    </div>
 @endsection
