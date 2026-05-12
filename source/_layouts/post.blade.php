@@ -15,8 +15,8 @@
         @endif
     </p>
 
-    @if ($page->image)
-        <img class="post-image" src="{{ $page->image }}" alt="">
+    @if ($page->image && strpos($page->image, 'data:') !== 0)
+        <img class="post-image" src="{{ $page->image }}" alt="" loading="lazy" decoding="async">
     @endif
 
     @php

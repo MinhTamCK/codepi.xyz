@@ -5,7 +5,7 @@ return [
     'baseUrl' => 'https://codepi.xyz',
     'site' => [
         'title' => 'Tam Blog',
-        'description' => 'Personal blog of Tam Nguyen.',
+        'description' => 'Notes on frontend, AI agents, and ideas worth keeping — by Tam Nguyen, a developer in Ho Chi Minh City.',
         'image' => 'default-share.png',
     ],
     'owner' => [
