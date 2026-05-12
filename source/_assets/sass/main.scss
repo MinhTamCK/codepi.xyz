@@ -1,23 +1,427 @@
-// Tacit - CSS Framework for Dummies, Without Classes
-@import url("https://unpkg.com/tacit-css@1.5.5/dist/tacit-css-1.5.5.min.css");
+// Tam Blog — Minimalist Editorial
+// Fonts: Newsreader (serif body) + Inter (sans UI)
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap");
 @import "~highlight.js/scss/a11y-dark";
 @import "~notyf/notyf.min";
 
-section h1:first-child {
-  margin-top: 18px;
+// ── Tokens ──────────────────────────────────────────
+:root {
+  --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --bg: #fafaf7;
+  --bg-elev: #f2f0eb;
+  --text: #1a1a1a;
+  --text-muted: #6b6b6b;
+  --text-faint: #a3a3a3;
+  --accent: #b8472a;
+  --rule: #e5e2dc;
+  --code-bg: #1d1f21;
+
+  --content-w: 680px;
+  --wrap-w: 760px;
+
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 16px;
+  --s-4: 24px;
+  --s-5: 48px;
+  --s-6: 80px;
 }
 
-button[data-sharer] {
-  color: #fff;
+[data-theme="dark"] {
+  --bg: #14110f;
+  --bg-elev: #1c1916;
+  --text: #e8e3dc;
+  --text-muted: #9a948b;
+  --text-faint: #5e5852;
+  --accent: #d97757;
+  --rule: #2a2622;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14110f;
+    --bg-elev: #1c1916;
+    --text: #e8e3dc;
+    --text-muted: #9a948b;
+    --text-faint: #5e5852;
+    --accent: #d97757;
+    --rule: #2a2622;
+  }
+}
+
+// ── Reset + base ────────────────────────────────────
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  font-feature-settings: "kern", "liga", "onum";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrap {
+  max-width: var(--wrap-w);
+  margin: 0 auto;
+  padding: var(--s-5) var(--s-4);
+}
+
+@media (max-width: 600px) {
+  html { font-size: 17px; }
+  .wrap { padding: var(--s-4) var(--s-3); }
+}
+
+// ── Typography ──────────────────────────────────────
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.25;
+  margin: var(--s-5) 0 var(--s-3);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: 2.25rem; font-weight: 500; letter-spacing: -0.02em; }
+h2 { font-size: 1.625rem; margin-top: var(--s-5); }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.0625rem; }
+
+p, ul, ol { margin: 0 0 var(--s-3); }
+
+ul, ol { padding-left: 1.4em; }
+li { margin-bottom: var(--s-1); }
+li::marker { color: var(--text-faint); }
+
+a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--text-faint);
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+strong { font-weight: 600; }
+em { font-style: italic; }
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: var(--s-5) 0;
+}
+
+blockquote {
+  margin: var(--s-4) 0;
+  padding-left: var(--s-3);
+  border-left: 2px solid var(--rule);
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+// ── Code ────────────────────────────────────────────
+code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  padding: 1px 5px;
+  background: var(--bg-elev);
+  border-radius: 3px;
+}
+
+pre {
+  margin: var(--s-4) 0;
+  padding: var(--s-3);
+  background: var(--code-bg);
+  color: #d4d4d4;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+}
+
+// ── Header ──────────────────────────────────────────
+.site-header {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: var(--s-3);
+  margin-bottom: var(--s-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+}
+
+.site-header .brand {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.0625rem;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: var(--s-3);
+  align-items: center;
+}
+
+.site-header nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.site-header nav a:hover { color: var(--accent); }
+
+.theme-toggle {
+  font: inherit;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.theme-toggle:hover { color: var(--accent); }
+
+// ── Content area ────────────────────────────────────
+article {
+  max-width: var(--content-w);
+}
+
+article > section > h1:first-child,
+article > h1:first-child {
+  margin-top: 0;
+}
+
+// ── Homepage ────────────────────────────────────────
+.intro {
+  font-size: 1.1875rem;
+  line-height: 1.65;
+  margin-bottom: var(--s-5);
+}
+
+.recent-heading {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin: var(--s-5) 0 var(--s-3);
+}
+
+// ── Post list ───────────────────────────────────────
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-list li {
+  margin-bottom: var(--s-3);
+  display: flex;
+  gap: var(--s-3);
+  align-items: baseline;
+}
+
+.post-list .date {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: var(--text-faint);
+  flex: 0 0 90px;
+  font-variant-numeric: tabular-nums;
+}
+
+.post-list a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.post-list a:hover { color: var(--accent); }
+
+.year-heading {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin: var(--s-5) 0 var(--s-3);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: var(--s-2);
+}
+
+.posts-summary {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: var(--s-5);
+}
+
+// ── Post page ───────────────────────────────────────
+.post-meta {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-bottom: var(--s-4);
+}
+
+.post-meta .sep {
+  margin: 0 var(--s-2);
+  color: var(--text-faint);
+}
+
+.post-meta a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.post-meta a:hover { color: var(--accent); }
+
+.post-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: var(--s-4) 0;
+  border-radius: 4px;
+}
+
+.post-outdated {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: var(--text-faint);
+  padding: var(--s-2) 0;
+  margin: var(--s-4) 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.post-footer {
+  margin-top: var(--s-5);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
 }
 
 .share-button {
-  margin-bottom: 0;
-  font-size: 12px;
-  padding: 6px 15px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--text-muted);
+  padding: 4px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 0 4px 4px 0;
+  transition: all 0.15s ease;
 }
 
-.share-button:last-child {
-  margin-right: 0;
+.share-button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+// ── Footer ──────────────────────────────────────────
+.site-footer {
+  margin-top: var(--s-6);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-3);
+  flex-wrap: wrap;
+}
+
+.site-footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.site-footer a:hover { color: var(--accent); }
+
+// ── Forms ───────────────────────────────────────────
+label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  margin-top: var(--s-3);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  padding: 8px 10px;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+textarea { min-height: 140px; resize: vertical; }
+
+input[type="submit"] {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  background: var(--text);
+  color: var(--bg);
+  border: 0;
+  padding: 8px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: var(--s-3);
+}
+
+input[type="submit"]:hover { background: var(--accent); }
+
+// ── Misc ────────────────────────────────────────────
+img { max-width: 100%; height: auto; }
+
+::selection {
+  background: var(--accent);
+  color: #fff;
 }
