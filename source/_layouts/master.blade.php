@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="{{ $page->language ?? 'en' }}">
+<html lang="{{ $page->lang() }}">
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>
-        @yield('title')
-        {{ !empty($__env->yieldContent('title')) ? ' | ' : '' }}
-        {{ $page->site->title }}
-    </title>
+    @php
+        $sectionTitle = trim($__env->yieldContent('title'));
+        $fullTitle = $sectionTitle
+            ? $sectionTitle . ' · ' . $page->site->title
+            : $page->site->title . ' — ' . $page->site->description;
+    @endphp
+    <title>{{ $fullTitle }}</title>
 
     @include('_partials.head.favicon')
     @include('_partials.head.meta')
@@ -80,7 +82,7 @@
         })();
     </script>
 
-    <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
+    <script defer src="{{ mix('js/main.js', 'assets/build') }}"></script>
     @includeWhen($page->production && $page->services->analytics, '_partials.analytics')
     @include('_partials.cms.identity_redirect')
 </body>
