@@ -40,7 +40,7 @@
             'author' => ['@id' => $baseUrl . '/#person'],
             'publisher' => ['@id' => $baseUrl . '/#person'],
             'inLanguage' => $page->lang() === 'vi' ? 'vi-VN' : 'en-US',
-            'keywords' => implode(', ', $page->tags ?: []),
+            'keywords' => implode(', ', is_object($page->tags) ? $page->tags->all() : ($page->tags ?: [])),
             'url' => $page->getUrl(),
         ];
 
