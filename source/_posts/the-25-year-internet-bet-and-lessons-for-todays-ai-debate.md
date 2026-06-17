@@ -1,5 +1,5 @@
 ---
-title: "The 25-year internet bet and lessons for today's AI debate"
+title: "The 25-year internet bet and lessons for the AI debate today"
 date: 2026-05-14
 image: https://static.bbw.vn/img/bbw/455735117-1050x700.webp
 comments: false

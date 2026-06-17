@@ -1,5 +1,5 @@
 ---
-title: "Most of the crypto industry is dead. The rest will become finance. That's not a tragedy — it's how technology matures."
+title: "Most of the crypto industry is dead. The rest will become finance. Not a tragedy — just how technology matures."
 date: 2026-05-16
 image: https://cdn.prod.website-files.com/65bb671b058cff59bb16de5d/6672816948bea0c388845d6b_is-crypto-dead-market-cover-hollaex.jpg
 comments: false
