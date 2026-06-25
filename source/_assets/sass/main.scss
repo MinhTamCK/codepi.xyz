@@ -478,3 +478,85 @@ img { max-width: 100%; height: auto; }
   background: var(--accent);
   color: #fff;
 }
+
+// ── Homepage hero (glyphcss ASCII 3D) ───────────────
+.hero {
+  display: flex;
+  align-items: center;
+  gap: var(--s-5);
+  margin-bottom: var(--s-6);
+}
+
+.hero-art {
+  flex: 0 0 290px;
+  height: 270px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-art glyph-camera { display: block; }
+
+// glyphcss paints into a single <pre>; neutralise the global code-block <pre> look
+.hero-art pre {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 6px;
+  line-height: 6px;
+  letter-spacing: 0;
+  white-space: pre;
+  overflow: visible;
+  cursor: grab;
+}
+
+.hero-text { flex: 1 1 auto; min-width: 0; }
+
+.hero-lead {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin: 0 0 var(--s-2);
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--s-3);
+}
+
+.hero-sub {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0 0 var(--s-4);
+}
+
+.hero-cta {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+}
+
+.hero-cta a {
+  text-decoration: none;
+  color: var(--accent);
+  margin-right: var(--s-4);
+}
+
+.hero-cta a:hover { text-decoration: underline; }
+
+@media (max-width: 640px) {
+  .hero { flex-direction: column; align-items: flex-start; gap: var(--s-3); }
+  .hero-art { flex: 0 0 auto; width: 100%; height: 240px; }
+  .hero-title { font-size: 1.75rem; }
+}
