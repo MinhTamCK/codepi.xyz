@@ -1,4 +1,5 @@
 ---
+image: https://codepi.xyz/assets/img/the-lifetime-deal-that-kills-your-startup.jpg
 title: The Lifetime Deal That Kills Your Startup
 date: 2026-06-03
 tags:

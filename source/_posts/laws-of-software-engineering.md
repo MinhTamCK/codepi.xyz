@@ -1,4 +1,5 @@
 ---
+image: https://codepi.xyz/assets/img/laws-of-software-engineering.jpg
 title: Laws of Software Engineering
 date: 2026-04-22
 comments: false
