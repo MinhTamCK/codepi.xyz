@@ -23,11 +23,15 @@ And the headline for anyone who cares about ownership: **the weights are MIT-lic
 
 Benchmarks are noisy, but the shape of the story is consistent. On real coding work GLM-5.2 is close to the closed-source frontier; outside coding it is not.
 
-- **FrontierSWE:** 74.4% vs Claude Opus 4.8's 75.4% — a one-point gap.
-- **Terminal-Bench 2.1:** jumped from 63.5 to 81 over the previous version.
-- **SWE-bench Pro:** 62.1, up from 58.4, approaching Opus range.
-- **SWE-Marathon** (ultra-long tasks): here the gap opens up — GLM-5.2 lands around half of Opus 4.8. Long, compounding tasks are still where closed frontier models pull ahead.
-- **Humanity's Last Exam** (general reasoning): 5–10 points behind Opus 4.8 and Gemini 3.1 Pro.
+| Benchmark | GLM-5.2 | Claude Opus 4.8 | Read |
+|---|---|---|---|
+| FrontierSWE | 74.4% | 75.4% | ~1-point gap |
+| Terminal-Bench 2.1 | 81 (from 63.5) | — | big jump over prev version |
+| SWE-bench Pro | 62.1 (from 58.4) | ~frontier | approaching Opus range |
+| SWE-Marathon (ultra-long) | ~½ of Opus | leader | gap opens up |
+| Humanity's Last Exam (reasoning) | trails 5–10 pts | leader | weak outside code |
+
+Long, compounding tasks (SWE-Marathon) are still where closed frontier models pull ahead, and general reasoning outside code trails Opus 4.8 and Gemini 3.1 Pro by 5–10 points.
 
 Read that as: strongest open-source coding model available, competitive with the frontier on ordinary engineering tasks, weaker on marathon-length problems and on reasoning outside code. For day-to-day "fix this, refactor that, wire up this feature" work, the gap is small enough to stop mattering for a lot of teams.
 
