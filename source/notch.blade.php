@@ -151,12 +151,7 @@ description: Notch is a free, open-source macOS app that lives in your notch —
 <section class="ld-section">
     <h2>See it in action</h2>
     <div class="ld-frame">
-        {{-- Demo video — replace the placeholder div below with either:
-            <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Notch demo" allowfullscreen></iframe>
-            or a local file dropped into source/assets/media/:
-            <video src="/assets/media/notch-demo.mp4" controls playsinline></video>
-        --}}
-        <div class="ld-frame-placeholder">Demo video coming soon</div>
+        <video src="/assets/media/notch-demo.mp4" poster="/assets/media/notch-poster.jpg" controls playsinline preload="metadata"></video>
     </div>
 </section>
 
