@@ -2,7 +2,7 @@
     $defaultImage = media($page->site->image);
     $shareImage = safe_image($page->image, $defaultImage);
     $hasOwnImage = $page->image && strpos($page->image, 'data:') !== 0;
-    $description = meta_description($page->excerpt() ?: $page->site->description);
+    $description = meta_description($page->description ?: $page->excerpt() ?: $page->site->description);
     $pageTitle = $page->title ?: $page->site->title;
     $twitterHandle = '@' . basename($page->links->twitter);
 @endphp

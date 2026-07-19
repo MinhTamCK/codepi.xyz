@@ -36,6 +36,7 @@
             <nav>
                 <ul>
                     <li><a href="/posts">Posts</a></li>
+                    <li><a href="/notch">Notch</a></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="/feed.atom">RSS</a></li>
                     <li><button class="theme-toggle" type="button" aria-label="Toggle theme" data-theme-toggle>☾</button></li>
