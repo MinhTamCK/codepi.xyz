@@ -17,7 +17,7 @@ return [
     ],
     'services' => [
         'cmsVersion' => '~2.10',
-        'analytics' => 'UA-96090593-2',
+        'analytics' => 'G-52ZNK66XXC',
         'disqus' => 'codepi',
         'formcarry' => '1BO-aim4JQV',
         'cloudinary' => [
