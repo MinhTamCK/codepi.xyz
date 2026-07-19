@@ -501,6 +501,7 @@ body.ld {
   font-family: var(--font-sans);
   background: var(--ink);
   color: var(--txt);
+  overflow-x: hidden;
 
   a:focus-visible,
   .ld-btn:focus-visible {
@@ -509,7 +510,7 @@ body.ld {
   }
 }
 
-// Menu bar with the notch cut into it.
+// Site header (plain nav — the Mac lives in the hero now).
 .ld-bar {
   position: relative;
   display: flex;
@@ -535,11 +536,13 @@ body.ld {
   text-decoration: none;
 }
 
+// The notch — sits at the top of the MacBook's display in the hero.
 .ld-notch {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   top: 0;
+  z-index: 3;
   width: 224px;
   height: 30px;
   background: #000;
@@ -631,26 +634,154 @@ body.ld-open .ld-nc {
 
 // Hero
 .ld-hero {
-  max-width: 760px;
+  max-width: 860px;
   margin: 0 auto;
   padding: 0 var(--s-4) var(--s-6);
   text-align: center;
 }
 
+// ── The MacBook stage ───────────────────────────────
+// A front-view MacBook drawn in CSS; the notch and the live demo panel sit
+// on its display, so the first thing a visitor sees IS the app in place.
+// The whole machine scales proportionally: design width 680px (base 780px).
+.ld-mac-wrap {
+  --ms: min(1, calc((100vw - 32px) / 800px));
+  height: calc(476px * var(--ms));
+  margin: var(--s-4) 0 0;
+  display: flex;
+  justify-content: center;
+  animation: ld-mac-in 0.8s cubic-bezier(0.2, 0.8, 0.3, 1) both;
+}
+
+@keyframes ld-mac-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
+  }
+}
+
+.ld-mac {
+  position: relative;
+  flex: 0 0 auto;
+  width: 680px;
+  transform: scale(var(--ms));
+  transform-origin: top center;
+}
+
+// ambient light spilling from the screen
+.ld-mac::before {
+  content: "";
+  position: absolute;
+  inset: -70px -90px;
+  z-index: -1;
+  background: radial-gradient(50% 45% at 50% 42%, rgba(62, 205, 232, 0.13), transparent 70%);
+  pointer-events: none;
+}
+
+.ld-screen {
+  background: #060708;
+  border: 1px solid #3b4048;
+  border-bottom-color: #23262c;
+  border-radius: 18px 18px 10px 10px;
+  padding: 10px 10px 16px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 34px 80px -34px rgba(0, 0, 0, 0.9);
+}
+
+.ld-display {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px 10px 4px 4px;
+  aspect-ratio: 658 / 430; // MacBook Pro's real ~1.53:1
+  background:
+    radial-gradient(52% 46% at 72% 108%, rgba(62, 205, 232, 0.16), transparent 70%),
+    radial-gradient(44% 40% at 26% 112%, rgba(240, 160, 80, 0.11), transparent 65%),
+    radial-gradient(130% 90% at 50% -30%, #1b2331 0%, #0c1017 52%, #070a0f 100%);
+}
+
+// In-screen macOS menu bar (the notch overlaps it, like the real thing).
+.ld-mbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 12px;
+  font-family: var(--sys-font);
+  font-size: 11.5px;
+  color: rgba(235, 235, 245, 0.85);
+  background: rgba(9, 11, 16, 0.55);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+  strong {
+    color: #fff;
+    font-weight: 700;
+  }
+}
+
+.ld-mbar-menu { color: rgba(235, 235, 245, 0.5); }
+
+.ld-mbar-right {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .ld-clock { color: rgba(235, 235, 245, 0.7); }
+}
+
+.ld-mac-base {
+  position: relative;
+  width: 780px;
+  height: 16px;
+  margin-left: -50px;
+  background: linear-gradient(180deg, #40454d 0%, #272b31 45%, #14161a 100%);
+  border-radius: 2px 2px 14px 14px;
+  box-shadow: 0 20px 44px -18px rgba(0, 0, 0, 0.9);
+}
+
+// thumb scoop
+.ld-mac-base::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 96px;
+  height: 7px;
+  background: #0d0f12;
+  border-radius: 0 0 48px 48px;
+  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.08);
+}
+
 // Session panel hanging from the notch — faithful HTML recreation of the
 // real ExpandedView (NotchViews.swift): 400pt panel, SF type, system colors.
 // Collapsed by default; body.ld-open expands it (spring, like the app).
+// It overlays the display's wallpaper, exactly like the NSPanel in the app.
 .ld-demo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.4s cubic-bezier(0.3, 1.1, 0.4, 1), padding 0.4s ease;
-  padding-bottom: var(--s-4);
+  transition: grid-template-rows 0.4s cubic-bezier(0.3, 1.1, 0.4, 1);
   cursor: pointer;
 }
 
 body.ld-open .ld-demo {
   grid-template-rows: 1fr;
-  padding-bottom: var(--s-5);
 }
 
 .ld-demo-clip {
@@ -662,15 +793,11 @@ body.ld-open .ld-demo {
 }
 
 .ld-hint {
-  margin: 10px 0 0;
+  margin: var(--s-3) 0 var(--s-5);
   font-family: var(--lmono);
   font-size: 11px;
   color: var(--dim);
-  opacity: 0;
-  transition: opacity 0.4s ease 0.8s;
 }
-
-body.ld-open .ld-hint { opacity: 1; }
 
 .ld-panel {
   width: 412px;
@@ -679,7 +806,7 @@ body.ld-open .ld-hint { opacity: 1; }
   border: 1px solid var(--line);
   border-top: 0;
   border-radius: 0 0 20px 20px;
-  padding: 6px 6px 10px;
+  padding: 34px 6px 10px;
   box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.8);
   text-align: left;
   font-family: var(--sys-font);
@@ -737,7 +864,15 @@ body.ld-open .ld-panel {
   }
 
   .eq i,
-  .ld-nc-right svg {
+  .ld-nc-right svg,
+  .ld-mac-wrap,
+  .ld-hero .ld-hint,
+  .ld-hero .ld-eyebrow,
+  .ld-hero h1,
+  .ld-hero .ld-sub,
+  .ld-hero .ld-cta,
+  .ld-hero .ld-note,
+  .ld-hero .ld-works {
     animation: none;
   }
 }
@@ -929,6 +1064,23 @@ body.ld-open .ld-panel {
   white-space: nowrap;
 }
 
+// First-visit reveal: the Mac lands first, the notch does its thing,
+// then the words follow — the machine explains the app before the copy does.
+@keyframes ld-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+.ld-hero .ld-hint { animation: ld-rise 0.5s ease 2.15s both; }
+.ld-hero .ld-eyebrow { animation: ld-rise 0.5s ease 2.3s both; }
+.ld-hero h1 { animation: ld-rise 0.55s ease 2.4s both; }
+.ld-hero .ld-sub { animation: ld-rise 0.55s ease 2.5s both; }
+.ld-hero .ld-cta { animation: ld-rise 0.55s ease 2.6s both; }
+.ld-hero .ld-note { animation: ld-rise 0.55s ease 2.65s both; }
+.ld-hero .ld-works { animation: ld-rise 0.55s ease 2.7s both; }
+
 // Hero text
 .ld-eyebrow {
   font-family: var(--lmono);
@@ -1065,6 +1217,8 @@ body.ld-open .ld-panel {
   max-width: 560px;
   margin: 0 auto;
 }
+
+.ld-end .ld-cta { margin: var(--s-4) 0; }
 
 .ld-features {
   display: grid;
@@ -1215,10 +1369,6 @@ body.ld-open .ld-panel {
   .ld-steps {
     grid-template-columns: 1fr;
   }
-
-  .ld-clock { display: none; }
-
-  .ld-notch { width: 120px; height: 24px; }
 
   .ld-permission {
     margin-left: 10px;

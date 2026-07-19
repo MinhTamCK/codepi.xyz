@@ -9,9 +9,32 @@ description: Notch is a free, open-source macOS app that lives in your notch —
 @section('content')
 <section class="ld-hero">
 
-    <div class="ld-demo" aria-hidden="true">
-        <div class="ld-demo-clip">
-        <div class="ld-panel">
+    <div class="ld-mac-wrap">
+        <div class="ld-mac">
+            <div class="ld-screen">
+                <div class="ld-display">
+                    <div class="ld-mbar" aria-hidden="true">
+                        <strong>Notch</strong>
+                        <span class="ld-mbar-menu">File</span>
+                        <span class="ld-mbar-menu">Edit</span>
+                        <span class="ld-mbar-menu">View</span>
+                        <span class="ld-mbar-menu">Help</span>
+                        <span class="ld-mbar-right">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="13" x2="23" y2="11"/></svg>
+                            <span class="ld-clock" data-clock></span>
+                        </span>
+                    </div>
+
+                    <div class="ld-notch" data-notch role="button" tabindex="0" aria-expanded="false" aria-label="Toggle the Notch demo panel">
+                        <span class="ld-nc ld-nc-left"><span class="eq"><i></i><i></i><i></i><i></i></span><strong>1</strong></span>
+                        <span class="ld-notch-cam"></span>
+                        <span class="ld-nc ld-nc-right"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><strong>1</strong></span>
+                    </div>
+
+                    <div class="ld-demo" aria-hidden="true">
+                        <div class="ld-demo-clip">
+                        <div class="ld-panel">
             <div class="ld-ph">
                 <span class="eq"><i></i><i></i><i></i><i></i></span>
                 <strong>1 working</strong>
@@ -65,9 +88,15 @@ description: Notch is a free, open-source macOS app that lives in your notch —
                 </span>
             </div>
         </div>
-        <p class="ld-hint">the app's actual UI — click the notch to toggle it</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ld-mac-base" aria-hidden="true"></div>
         </div>
     </div>
+
+    <p class="ld-hint">the app's actual UI — click the notch to toggle it</p>
 
     <p class="ld-eyebrow">macos coding-agent monitor</p>
     <h1>Keep an eye on<br>your coding agents<span class="ld-dot">.</span></h1>
@@ -91,37 +120,36 @@ description: Notch is a free, open-source macOS app that lives in your notch —
 
 <section class="ld-section">
     <h2>Everything you need to stay in flow</h2>
-    <p class="ld-section-sub">Monitor, approve, and keep moving — across every machine you run.</p>
     <div class="ld-features">
         <div class="ld-card">
             <span class="ld-tag tg-cyan">● working</span>
             <h3>Live monitoring</h3>
-            <p>Every session on every machine, grouped with live state. A glance at the notch tells you if anything needs you.</p>
+            <p>Every session, every machine — one glance at the notch.</p>
         </div>
         <div class="ld-card">
             <span class="ld-tag tg-amber">● waiting</span>
             <h3>Remote approve</h3>
-            <p>Permission requests and plan reviews land in the notch. One click decides, and the agent continues instantly.</p>
+            <p>Permission requests land in the notch. One click decides.</p>
         </div>
         <div class="ld-card">
             <span class="ld-tag">&gt;_ agents</span>
             <h3>Multi-agent</h3>
-            <p>Claude Code and Cursor today, agent-agnostic under the hood. More CLI coding agents are on the way.</p>
+            <p>Claude Code and Cursor today — more on the way.</p>
         </div>
         <div class="ld-card">
             <span class="ld-tag">~2 MB</span>
             <h3>Lightweight</h3>
-            <p>Native Swift and SwiftUI. Sits idle at nearly zero CPU — no Electron, no background daemons.</p>
+            <p>Native Swift. Near-zero CPU, no Electron.</p>
         </div>
         <div class="ld-card">
             <span class="ld-tag">0 prompts</span>
             <h3>Permissionless</h3>
-            <p>No accessibility access, no screen recording, no admin rights. It never asks for a single macOS permission.</p>
+            <p>Never asks for a single macOS permission.</p>
         </div>
         <div class="ld-card">
             <span class="ld-tag">self-hosted</span>
             <h3>Private by design</h3>
-            <p>Events go from your machines straight to your Mac over your own network, guarded by a bearer token. No cloud, no analytics.</p>
+            <p>Your machines talk straight to your Mac. No cloud.</p>
         </div>
     </div>
 </section>
@@ -132,18 +160,18 @@ description: Notch is a free, open-source macOS app that lives in your notch —
         <div class="ld-step">
             <span class="ld-step-num">1</span>
             <h3>Open Notch.app</h3>
-            <p>It hosts its own server right on your Mac — zero config, nothing else to install.</p>
+            <p>It hosts its own server — zero config.</p>
         </div>
         <div class="ld-step">
             <span class="ld-step-num">2</span>
             <h3>Connect your machines</h3>
-            <p>Run the one-liner from the app menu on each VM or computer. It wires up the agent hooks — no daemon left running.</p>
+            <p>One line on each VM or computer.</p>
             <code class="ld-code">curl your-mac:4519/install?token=… | bash</code>
         </div>
         <div class="ld-step">
             <span class="ld-step-num">3</span>
             <h3>Approve from the notch</h3>
-            <p>A chime when a session needs you. One click to approve or deny — plans render as Markdown so you can read first.</p>
+            <p>A chime when a session needs you — one click decides.</p>
         </div>
     </div>
 </section>
