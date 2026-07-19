@@ -51,6 +51,17 @@
             setInterval(tick, 30000);
         })();
         (function () {
+            // Safari can't do the CSS tan(atan2()) length division — set the
+            // MacBook scale factor directly; inline style wins everywhere.
+            var wrap = document.querySelector('.ld-mac-wrap');
+            if (!wrap) return;
+            function fit() {
+                wrap.style.setProperty('--ms', Math.min(1, (window.innerWidth - 32) / 800));
+            }
+            fit();
+            window.addEventListener('resize', fit);
+        })();
+        (function () {
             var notch = document.querySelector('[data-notch]');
             var demo = document.querySelector('.ld-demo');
             if (!notch || !demo) return;

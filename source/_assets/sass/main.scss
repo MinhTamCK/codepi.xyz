@@ -652,6 +652,9 @@ body.ld-open .ld-nc {
   margin: var(--s-4) 0 0;
   display: flex;
   justify-content: center;
+  // the unscaled 680px layout box must not widen the mobile viewport
+  overflow-x: hidden;
+  overflow-x: clip;
   animation: ld-mac-in 0.8s cubic-bezier(0.2, 0.8, 0.3, 1) both;
 }
 
@@ -1259,7 +1262,10 @@ body.ld-open .ld-panel {
 
 .ld-steps {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  // minmax(0, …) lets columns shrink below the nowrap curl one-liner's
+  // min-content width — otherwise it widens the viewport on phones/iPads;
+  // the middle column gets extra room so the one-liner fits untruncated
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 1fr);
   gap: var(--s-4);
   text-align: left;
   margin-top: var(--s-5);
@@ -1362,7 +1368,7 @@ body.ld-open .ld-panel {
 @media (max-width: 800px) {
   .ld-features,
   .ld-steps {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .ld-permission {
