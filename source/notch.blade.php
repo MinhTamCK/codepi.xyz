@@ -105,7 +105,6 @@ description: Notch is a free, open-source macOS app that lives in your notch —
         <a class="ld-btn" href="https://github.com/MinhTamCK/notch/releases/latest">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download for Mac
-            <span class="ld-btn-ver">v0.3.0</span>
         </a>
         <a class="ld-ghost" href="https://github.com/MinhTamCK/notch">View on GitHub</a>
     </p>
