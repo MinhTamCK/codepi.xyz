@@ -645,7 +645,9 @@ body.ld-open .ld-nc {
 // on its display, so the first thing a visitor sees IS the app in place.
 // The whole machine scales proportionally: design width 680px (base 780px).
 .ld-mac-wrap {
-  --ms: min(1, calc((100vw - 32px) / 800px));
+  // tan(atan2(y, x)) = y/x as a unitless number; calc() can't divide two
+  // lengths (postcss-calc rejects it, and browser support is newer than trig).
+  --ms: min(1, tan(atan2(100vw - 32px, 800px)));
   height: calc(476px * var(--ms));
   margin: var(--s-4) 0 0;
   display: flex;
