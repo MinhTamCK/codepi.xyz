@@ -191,6 +191,6 @@ description: Notch is a free, open-source macOS app that lives in your notch —
             Download for Mac
         </a>
     </p>
-    <p class="ld-note">First launch: right-click the app and choose Open — it isn't notarized yet.</p>
+    <p class="ld-note">Signed &amp; notarized by Apple — just drag to Applications and open.</p>
 </section>
 @endsection
