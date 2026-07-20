@@ -98,9 +98,8 @@ description: Notch is a free, open-source macOS app that lives in your notch —
 
     <p class="ld-hint">the app's actual UI — click the notch to toggle it</p>
 
-    <p class="ld-eyebrow">macos coding-agent monitor</p>
-    <h1>Keep an eye on<br>your coding agents<span class="ld-dot">.</span></h1>
-    <p class="ld-sub">Claude Code on your Mac. Cursor on a VM. Notch lives in your Mac's notch and shows every session's state — and when an agent asks to run something, you approve or deny it right there. No terminal-hopping.</p>
+    <h1>Keep an eye on<br>your agents<span class="ld-dot">.</span></h1>
+    <p class="ld-sub">Cursor on your Mac. Claude Code on a VM. Every session's state lives in your notch — approve or deny agent requests right there. No terminal-hopping.</p>
     <p class="ld-cta">
         <a class="ld-btn" href="https://github.com/MinhTamCK/notch/releases/latest">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -150,27 +149,11 @@ description: Notch is a free, open-source macOS app that lives in your notch —
             <h3>Private by design</h3>
             <p>Your machines talk straight to your Mac. No cloud.</p>
         </div>
-    </div>
-</section>
-
-<section class="ld-section">
-    <h2>Up and running in a minute</h2>
-    <div class="ld-steps">
-        <div class="ld-step">
-            <span class="ld-step-num">1</span>
-            <h3>Open Notch.app</h3>
-            <p>It hosts its own server — zero config.</p>
-        </div>
-        <div class="ld-step">
-            <span class="ld-step-num">2</span>
-            <h3>Connect your machines</h3>
-            <p>One line on each VM or computer.</p>
+        <div class="ld-card ld-card-wide">
+            <span class="ld-tag">zero config</span>
+            <h3>Up and running in a minute</h3>
+            <p>Open Notch.app — it hosts its own server. Connect each VM or computer with one line:</p>
             <code class="ld-code">curl your-mac:4519/install?token=… | bash</code>
-        </div>
-        <div class="ld-step">
-            <span class="ld-step-num">3</span>
-            <h3>Approve from the notch</h3>
-            <p>A chime when a session needs you — one click decides.</p>
         </div>
     </div>
 </section>

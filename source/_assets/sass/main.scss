@@ -872,7 +872,6 @@ body.ld-open .ld-panel {
   .ld-nc-right svg,
   .ld-mac-wrap,
   .ld-hero .ld-hint,
-  .ld-hero .ld-eyebrow,
   .ld-hero h1,
   .ld-hero .ld-sub,
   .ld-hero .ld-cta,
@@ -1079,7 +1078,6 @@ body.ld-open .ld-panel {
 }
 
 .ld-hero .ld-hint { animation: ld-rise 0.5s ease 2.15s both; }
-.ld-hero .ld-eyebrow { animation: ld-rise 0.5s ease 2.3s both; }
 .ld-hero h1 { animation: ld-rise 0.55s ease 2.4s both; }
 .ld-hero .ld-sub { animation: ld-rise 0.55s ease 2.5s both; }
 .ld-hero .ld-cta { animation: ld-rise 0.55s ease 2.6s both; }
@@ -1087,15 +1085,6 @@ body.ld-open .ld-panel {
 .ld-hero .ld-works { animation: ld-rise 0.55s ease 2.7s both; }
 
 // Hero text
-.ld-eyebrow {
-  font-family: var(--lmono);
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--cyan);
-  margin: 0 0 var(--s-3);
-}
-
 .ld-hero h1 {
   font-family: var(--disp);
   font-size: clamp(2.375rem, 6.5vw, 3.875rem);
@@ -1248,6 +1237,11 @@ body.ld-open .ld-panel {
   }
 }
 
+.ld-card-wide {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
 .ld-tag {
   font-family: var(--lmono);
   font-size: 0.6875rem;
@@ -1259,48 +1253,6 @@ body.ld-open .ld-panel {
 
 .tg-cyan { color: var(--cyan); }
 .tg-amber { color: var(--amber); }
-
-.ld-steps {
-  display: grid;
-  // minmax(0, …) lets columns shrink below the nowrap curl one-liner's
-  // min-content width — otherwise it widens the viewport on phones/iPads;
-  // the middle column gets extra room so the one-liner fits untruncated
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 1fr);
-  gap: var(--s-4);
-  text-align: left;
-  margin-top: var(--s-5);
-}
-
-.ld-step-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-  color: var(--cyan);
-  font-family: var(--lmono);
-  font-size: 0.8125rem;
-  margin-bottom: var(--s-3);
-}
-
-.ld-step {
-  h3 {
-    font-family: var(--disp);
-    font-size: 1.0625rem;
-    font-weight: 700;
-    margin: 0 0 var(--s-1);
-    color: var(--txt);
-  }
-
-  p {
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    color: var(--mut);
-    margin: 0;
-  }
-}
 
 .ld-code {
   display: block;
@@ -1366,8 +1318,7 @@ body.ld-open .ld-panel {
 .px { image-rendering: pixelated; }
 
 @media (max-width: 800px) {
-  .ld-features,
-  .ld-steps {
+  .ld-features {
     grid-template-columns: minmax(0, 1fr);
   }
 
