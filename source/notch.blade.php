@@ -1,6 +1,6 @@
 ---
 title: Notch
-description: Notch is a free, open-source macOS app that lives in your notch — monitor Claude Code and Cursor sessions across all your machines, and approve permission requests without touching a terminal.
+description: Notch is a free, open-source macOS app that lives in your notch — monitor Claude Code and Cursor sessions across all your machines, approve permission requests, answer Claude's questions, and watch your plan usage without touching a terminal.
 ---
 @extends('_layouts.landing')
 
@@ -47,6 +47,29 @@ description: Notch is a free, open-source macOS app that lives in your notch —
                 </span>
             </div>
 
+            <div class="ld-usage">
+                <span class="ld-usage-label">USAGE</span>
+                <span class="ld-uw"><em>5h</em><span class="ld-seg"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></span>38%</span>
+                <span class="ld-uw"><em>7d</em><span class="ld-seg"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>11%</span>
+                <span class="ld-usage-reset">resets 4h11m</span>
+            </div>
+
+            <div class="ld-ask">
+                <div class="ld-perm-head">
+                    <img class="px" src="/assets/img/agent-claude.png" alt="" width="20" height="20">
+                    <strong>api-server</strong>
+                    <span class="ld-mut">· mbp-m3</span>
+                    <span class="ld-ask-tool">? Question</span>
+                </div>
+                <p class="ld-ask-q">Deploy this build where?</p>
+                <span class="ld-opt is-sel"><i class="ld-radio"></i><span><strong>Staging</strong><em>safe, dry run first</em></span></span>
+                <span class="ld-opt"><i class="ld-radio"></i><span><strong>Production</strong><em>straight to prod cluster</em></span></span>
+                <div class="ld-perm-actions">
+                    <span class="ld-pill ld-pill-ghost">In Terminal</span>
+                    <span class="ld-pill ld-pill-allow">Submit</span>
+                </div>
+            </div>
+
             <div class="ld-perm">
                 <div class="ld-perm-head">
                     <img src="/assets/img/agent-cursor.png" alt="" width="20" height="20">
@@ -61,32 +84,7 @@ description: Notch is a free, open-source macOS app that lives in your notch —
                 </div>
             </div>
 
-            <p class="ld-machine">mbp-m3</p>
-            <div class="ld-srow">
-                <span class="ld-badge"><img class="px" src="/assets/img/agent-claude.png" alt="" width="20" height="20"></span>
-                <span class="ld-srow-main">
-                    <span class="ld-srow-title"><strong>api-server</strong> <span class="eq eq-sm"><i></i><i></i><i></i><i></i></span> <time>now</time></span>
-                    <span class="ld-srow-sub">You: add rate limiting to /v1/events</span>
-                </span>
-            </div>
-
-            <p class="ld-machine">vm-eu-1</p>
-            <div class="ld-srow">
-                <span class="ld-badge is-dim"><img src="/assets/img/agent-cursor.png" alt="" width="20" height="20"><i class="ld-st st-perm">!</i></span>
-                <span class="ld-srow-main">
-                    <span class="ld-srow-title"><strong>db-migrate</strong> <span class="ld-stlabel st-orange">needs permission</span> <time>30s</time></span>
-                    <span class="ld-srow-sub">Bash</span>
-                </span>
-            </div>
-
-            <p class="ld-machine">vm-us-2</p>
-            <div class="ld-srow">
-                <span class="ld-badge is-dim"><img class="px" src="/assets/img/agent-claude.png" alt="" width="20" height="20"><i class="ld-st st-ok">✓</i></span>
-                <span class="ld-srow-main">
-                    <span class="ld-srow-title"><strong>tests</strong> <span class="ld-stlabel st-green">done</span> <time>5 min</time></span>
-                    <span class="ld-srow-sub">You: run the suite and fix failures</span>
-                </span>
-            </div>
+            <p class="ld-showall">Show all 3 sessions</p>
         </div>
                         </div>
                     </div>
@@ -99,7 +97,7 @@ description: Notch is a free, open-source macOS app that lives in your notch —
     <p class="ld-hint">the app's actual UI — click the notch to toggle it</p>
 
     <h1>Keep an eye on<br>your agents<span class="ld-dot">.</span></h1>
-    <p class="ld-sub">Cursor on your Mac. Claude Code on a VM. Every session's state lives in your notch — approve or deny agent requests right there. No terminal-hopping.</p>
+    <p class="ld-sub">Cursor on your Mac. Claude Code on a VM. Every session's state lives in your notch — approve requests, answer Claude's questions, watch your plan usage. No terminal-hopping.</p>
     <p class="ld-cta">
         <a class="ld-btn" href="https://github.com/MinhTamCK/notch/releases/latest">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -127,7 +125,17 @@ description: Notch is a free, open-source macOS app that lives in your notch —
         <div class="ld-card">
             <span class="ld-tag tg-amber">● waiting</span>
             <h3>Remote approve</h3>
-            <p>Permission requests land in the notch. One click decides.</p>
+            <p>Permission requests land in the notch. One click decides — with diff previews and plan review.</p>
+        </div>
+        <div class="ld-card">
+            <span class="ld-tag tg-yellow">? question</span>
+            <h3>Answer questions</h3>
+            <p>Claude's multiple-choice questions pop up as pickers. Choose, submit, keep moving.</p>
+        </div>
+        <div class="ld-card">
+            <span class="ld-tag tg-green">▰▰▰▱ 38%</span>
+            <h3>Usage at a glance</h3>
+            <p>Your Claude plan's 5-hour and weekly limits, with reset countdowns, right in the notch.</p>
         </div>
         <div class="ld-card">
             <span class="ld-tag">&gt;_ agents</span>
@@ -163,6 +171,7 @@ description: Notch is a free, open-source macOS app that lives in your notch —
     <div class="ld-frame">
         <video src="/assets/media/notch-demo.mp4" poster="/assets/media/notch-poster.jpg" controls playsinline preload="metadata"></video>
     </div>
+    <p class="ld-credit">Music: “Inspired” — Kevin MacLeod (incompetech.com), CC BY 4.0</p>
 </section>
 
 <section class="ld-section ld-end">

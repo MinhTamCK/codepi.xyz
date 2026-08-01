@@ -495,6 +495,7 @@ body.ld {
   --sys-orange: #ff9f0a;
   --sys-green: #30d158;
   --sys-red: rgba(255, 69, 58, 0.85);
+  --sys-yellow: #ffd60a;
   --sys-sec: rgba(235, 235, 245, 0.6);
   --sys-card: rgba(255, 255, 255, 0.07);
 
@@ -811,7 +812,7 @@ body.ld-open .ld-demo {
   border: 1px solid var(--line);
   border-top: 0;
   border-radius: 0 0 20px 20px;
-  padding: 34px 6px 10px;
+  padding: 28px 6px 8px;
   box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.8);
   text-align: left;
   font-family: var(--sys-font);
@@ -908,6 +909,149 @@ body.ld-open .ld-panel {
   background: var(--sys-green);
 }
 
+// UsageRow — Claude plan rate limits (5h/7d windows)
+.ld-usage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding: 4px 10px;
+  white-space: nowrap;
+  background: var(--sys-card);
+  border-radius: 7px;
+  font-family: var(--lmono);
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.ld-usage-label {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--sys-sec);
+}
+
+.ld-uw {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  em {
+    font-style: normal;
+    color: var(--sys-sec);
+  }
+}
+
+.ld-seg {
+  display: inline-flex;
+  gap: 1.5px;
+
+  i {
+    width: 5px;
+    height: 7px;
+    border-radius: 1px;
+    background: rgba(255, 255, 255, 0.15);
+
+    &.on { background: var(--sys-green); }
+  }
+}
+
+.ld-usage-reset {
+  margin-left: auto;
+  font-weight: 400;
+  color: var(--sys-sec);
+}
+
+// QuestionCard (AskUserQuestion picker)
+.ld-ask {
+  background: var(--sys-card);
+  border: 1px solid rgba(255, 214, 10, 0.35);
+  border-radius: 10px;
+  padding: 9px 10px;
+  margin-bottom: 8px;
+}
+
+.ld-ask-tool {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--sys-yellow);
+}
+
+.ld-ask-q {
+  margin: 6px 0 0;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.ld-opt {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 3px;
+  padding: 3px 7px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid transparent;
+  border-radius: 6px;
+
+  strong {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  em {
+    display: block;
+    font-style: normal;
+    font-size: 9.5px;
+    color: var(--sys-sec);
+  }
+
+  &.is-sel {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 214, 10, 0.45);
+
+    strong { font-weight: 600; }
+  }
+}
+
+.ld-radio {
+  flex: 0 0 auto;
+  width: 9px;
+  height: 9px;
+  border: 1.5px solid var(--sys-sec);
+  border-radius: 50%;
+
+  .is-sel & {
+    border-color: var(--sys-yellow);
+    background: radial-gradient(circle, var(--sys-yellow) 40%, transparent 52%);
+  }
+}
+
+.ld-opt + .ld-perm-actions,
+.ld-ask .ld-perm-actions { margin-top: 7px; }
+
+.ld-pill-ghost {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+
+.ld-credit {
+  margin-top: 10px;
+  text-align: center;
+  font-family: var(--lmono);
+  font-size: 10px;
+  color: var(--dim);
+}
+
+// "Show all N sessions" link shown while confirms are focused
+.ld-showall {
+  margin: 2px 0 0;
+  text-align: center;
+  font-size: 9.5px;
+  color: var(--sys-sec);
+}
+
 // PermissionCard
 .ld-perm {
   background: var(--sys-card);
@@ -944,7 +1088,7 @@ body.ld-open .ld-panel {
 
 .ld-perm-detail {
   display: block;
-  margin: 8px 0;
+  margin: 6px 0;
   padding: 7px;
   background: rgba(0, 0, 0, 0.35);
   border-radius: 7px;
@@ -1253,6 +1397,8 @@ body.ld-open .ld-panel {
 
 .tg-cyan { color: var(--cyan); }
 .tg-amber { color: var(--amber); }
+.tg-yellow { color: var(--sys-yellow); }
+.tg-green { color: var(--sys-green); }
 
 .ld-code {
   display: block;
