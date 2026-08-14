@@ -105,7 +105,7 @@ description: Notch is a free, open-source macOS app that lives in your notch —
         </a>
         <a class="ld-ghost" href="https://github.com/MinhTamCK/notch">View on GitHub</a>
     </p>
-    <p class="ld-note">macOS 14+ · ~2 MB · free &amp; open source</p>
+    <p class="ld-note">macOS 14+ · ~3.8 MB · free &amp; open source</p>
     <p class="ld-works">
         <span class="ld-works-label">works with</span>
         <span class="ld-works-item"><img class="px" src="/assets/img/agent-claude.png" alt="" width="20" height="20"> Claude Code</span>
@@ -138,12 +138,17 @@ description: Notch is a free, open-source macOS app that lives in your notch —
             <p>Your Claude plan's 5-hour and weekly limits, with reset countdowns, right in the notch.</p>
         </div>
         <div class="ld-card">
+            <span class="ld-tag">lid closed</span>
+            <h3>Runs with the lid shut</h3>
+            <p>One toggle keeps the Mac awake on battery or power — sessions carry on while the screen is locked.</p>
+        </div>
+        <div class="ld-card">
             <span class="ld-tag">&gt;_ agents</span>
             <h3>Multi-agent</h3>
             <p>Claude Code and Cursor today — more on the way.</p>
         </div>
         <div class="ld-card">
-            <span class="ld-tag">~2 MB</span>
+            <span class="ld-tag">~3.8 MB</span>
             <h3>Lightweight</h3>
             <p>Native Swift. Near-zero CPU, no Electron.</p>
         </div>
