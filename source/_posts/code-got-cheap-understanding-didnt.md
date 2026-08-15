@@ -1,5 +1,5 @@
 ---
-title: "Code Got Cheap. Understanding Didn't."
+title: "Code Got Cheap. Understanding Didn’t."
 date: 2026-08-15
 image: https://codepi.xyz/assets/img/code-got-cheap-understanding-didnt.jpg
 comments: false
