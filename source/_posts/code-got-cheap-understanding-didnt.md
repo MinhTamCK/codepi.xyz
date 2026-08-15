@@ -31,6 +31,71 @@ Then comes the scene that makes the point better than any argument:
 
 You both sit watching a wall of confident text you have no way to verify. Then: *"Didn't you build this like… last week?"* Silence.
 
+<figure class="dg-figure">
+<style>
+.dg-figure { margin: var(--s-5, 48px) 0; }
+.dg-figure svg { display: block; width: 100%; height: auto; }
+.dg-figure figcaption { margin-top: var(--s-3, 16px); font-family: var(--font-sans); font-size: 0.8125rem; line-height: 1.5; color: var(--text-muted); }
+.dg-loop .ring { fill: none; stroke: var(--text-muted, #6b6b6b); stroke-width: 1.2; }
+.dg-loop .spoke { fill: none; stroke: var(--text-faint, #a3a3a3); stroke-width: 1; stroke-dasharray: 5 4; }
+.dg-loop .station { fill: var(--bg, #fafaf7); stroke: var(--text, #1a1a1a); stroke-width: 1; }
+.dg-loop .station.focal { fill: var(--accent, #b8472a); fill-opacity: 0.08; stroke: var(--accent, #b8472a); stroke-width: 1.2; }
+.dg-loop .hub { fill: var(--text, #1a1a1a); }
+.dg-loop .node-name { fill: var(--text, #1a1a1a); font: 600 12px var(--font-sans); text-anchor: middle; }
+.dg-loop .focal-name { fill: var(--accent, #b8472a); }
+.dg-loop .sublabel { fill: var(--text-faint, #a3a3a3); font: 400 8px var(--font-mono); text-anchor: middle; }
+.dg-loop .hub-name { fill: var(--bg, #fafaf7); font: 600 15px var(--font-sans); text-anchor: middle; }
+.dg-loop .hub-sub { fill: var(--bg, #fafaf7); opacity: 0.72; font: 400 8px var(--font-mono); text-anchor: middle; }
+.dg-loop .arrow-label { fill: var(--text-faint, #a3a3a3); font: 400 8px var(--font-mono); letter-spacing: 0.06em; text-anchor: middle; }
+.dg-loop .mask { fill: var(--bg, #fafaf7); }
+.dg-loop .mk-muted { fill: var(--text-muted, #6b6b6b); }
+.dg-loop .mk-soft { fill: var(--text-faint, #a3a3a3); }
+</style>
+<svg class="dg-loop" viewBox="0 0 688 592" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="compound-loop-title compound-loop-desc">
+<title id="compound-loop-title">The loop that compounds</title>
+<desc id="compound-loop-desc">Six stations run clockwise from an agent writing a large change, through a branch that looks like it works, a review that gives in, a merge, a bug nobody can trace, and a request back to the model. Every pass writes more unexplained system into one central store of understanding debt.</desc>
+<defs>
+<marker id="dg-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="mk-muted" points="0 0, 8 3, 0 6"/></marker>
+<marker id="dg-arrow-soft" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="mk-soft" points="0 0, 8 3, 0 6"/></marker>
+</defs>
+<!-- Solid clockwise ring: six arcs on the same r=200 station circle. -->
+<path class="ring" d="M 424.000 112.697 A 200 200 0 0 1 493.458 163.101" marker-end="url(#dg-arrow)"/>
+<path class="ring" d="M 532.085 228.000 A 200 200 0 0 1 532.490 362.870" marker-end="url(#dg-arrow)"/>
+<path class="ring" d="M 494.253 428.000 A 200 200 0 0 1 425.098 478.820" marker-end="url(#dg-arrow)"/>
+<path class="ring" d="M 264.000 479.303 A 200 200 0 0 1 194.542 428.899" marker-end="url(#dg-arrow)"/>
+<path class="ring" d="M 155.915 364.000 A 200 200 0 0 1 155.510 229.130" marker-end="url(#dg-arrow)"/>
+<path class="ring" d="M 193.747 164.000 A 200 200 0 0 1 262.902 113.180" marker-end="url(#dg-arrow)"/>
+<!-- Dashed write-backs: station inner edge to 6px before the hub stroke. -->
+<line class="spoke" x1="344.000" y1="128.000" x2="344.000" y2="242.000" marker-end="url(#dg-arrow-soft)"/>
+<line class="spoke" x1="460.574" y1="228.000" x2="432.335" y2="245.000" marker-end="url(#dg-arrow-soft)"/>
+<line class="spoke" x1="460.574" y1="364.000" x2="432.335" y2="347.000" marker-end="url(#dg-arrow-soft)"/>
+<line class="spoke" x1="344.000" y1="464.000" x2="344.000" y2="350.000" marker-end="url(#dg-arrow-soft)"/>
+<line class="spoke" x1="227.426" y1="364.000" x2="255.665" y2="347.000" marker-end="url(#dg-arrow-soft)"/>
+<line class="spoke" x1="227.426" y1="228.000" x2="255.665" y2="245.000" marker-end="url(#dg-arrow-soft)"/>
+<!-- One curated write-back label. -->
+<rect class="mask" x="356" y="396" width="52" height="12" rx="2"/>
+<text x="382" y="406" class="arrow-label">+ DEBT</text>
+<!-- Stations -->
+<rect class="station" x="264" y="64" width="160" height="64" rx="6"/>
+<text x="344" y="92" class="node-name">Agent writes it</text><text x="344" y="112" class="sublabel">24,506 lines</text>
+<rect class="station" x="436" y="164" width="160" height="64" rx="6"/>
+<text x="516" y="192" class="node-name">Looks like it works</text><text x="516" y="212" class="sublabel">branch runs green</text>
+<rect class="station focal" x="436" y="364" width="160" height="64" rx="6"/>
+<text x="516" y="392" class="node-name focal-name">Review gives in</text><text x="516" y="412" class="sublabel">10 PRs a day</text>
+<rect class="station" x="264" y="464" width="160" height="64" rx="6"/>
+<text x="344" y="492" class="node-name">Merged</text><text x="344" y="512" class="sublabel">nobody holds it</text>
+<rect class="station" x="92" y="364" width="160" height="64" rx="6"/>
+<text x="172" y="392" class="node-name">Bug surfaces</text><text x="172" y="412" class="sublabel">4th attempt to fix</text>
+<rect class="station" x="92" y="164" width="160" height="64" rx="6"/>
+<text x="172" y="192" class="node-name">Ask the model</text><text x="172" y="212" class="sublabel">wall of text</text>
+<!-- The one shared-state hub. -->
+<rect class="hub" x="244" y="248" width="200" height="96" rx="8"/>
+<text x="344" y="292" class="hub-name">Understanding debt</text>
+<text x="344" y="314" class="hub-sub">compounds every pass</text>
+</svg>
+<figcaption>The ring is the work; the dashed spokes are what it leaves behind. Every pass ships something that runs and adds system nobody holds a model of — so the next bug is harder to trace than the last, and the only tool left is the thing that wrote it.</figcaption>
+</figure>
+
 Nobody ever understood a whole large system. That's not new. What's new is that there used to be **someone** who understood each part and could explain it to you. Now they ask an LLM, because they don't know either.
 
 ## Why the old safeguards stopped working
