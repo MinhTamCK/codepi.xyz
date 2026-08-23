@@ -1,6 +1,6 @@
 ---
 title: Notch
-description: Notch is a free, open-source macOS app that lives in your notch — monitor Claude Code and Cursor sessions across all your machines, approve permission requests, answer Claude's questions, and watch your plan usage without touching a terminal.
+description: Notch is a free, open-source macOS app that lives in your notch — monitor Claude Code, Codex and Cursor sessions across all your machines, approve permission requests, answer Claude's questions, and watch your plan usage without touching a terminal.
 ---
 @extends('_layouts.landing')
 
@@ -72,7 +72,7 @@ description: Notch is a free, open-source macOS app that lives in your notch —
 
             <div class="ld-perm">
                 <div class="ld-perm-head">
-                    <img src="/assets/img/agent-cursor.png" alt="" width="20" height="20">
+                    <img src="/assets/img/agent-codex.png" alt="" width="20" height="20">
                     <strong>db-migrate</strong>
                     <span class="ld-mut">· vm-eu-1</span>
                     <span class="ld-perm-tool"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 1 21h22L12 2z"/></svg>Bash</span>
@@ -97,7 +97,7 @@ description: Notch is a free, open-source macOS app that lives in your notch —
     <p class="ld-hint">the app's actual UI — click the notch to toggle it</p>
 
     <h1>Keep an eye on<br>your agents<span class="ld-dot">.</span></h1>
-    <p class="ld-sub">Cursor on your Mac. Claude Code on a VM. Every session's state lives in your notch — approve requests, answer Claude's questions, watch your plan usage. No terminal-hopping.</p>
+    <p class="ld-sub">Cursor on your Mac. Claude Code on one VM, Codex on another. Every session's state lives in your notch — approve requests, answer Claude's questions, watch your plan usage. No terminal-hopping.</p>
     <p class="ld-cta">
         <a class="ld-btn" href="https://github.com/MinhTamCK/notch/releases/latest">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -109,6 +109,7 @@ description: Notch is a free, open-source macOS app that lives in your notch —
     <p class="ld-works">
         <span class="ld-works-label">works with</span>
         <span class="ld-works-item"><img class="px" src="/assets/img/agent-claude.png" alt="" width="20" height="20"> Claude Code</span>
+        <span class="ld-works-item"><img src="/assets/img/agent-codex.png" alt="" width="20" height="20"> Codex</span>
         <span class="ld-works-item"><img src="/assets/img/agent-cursor.png" alt="" width="20" height="20"> Cursor</span>
         <span class="ld-works-label">more agents coming</span>
     </p>
@@ -145,7 +146,7 @@ description: Notch is a free, open-source macOS app that lives in your notch —
         <div class="ld-card">
             <span class="ld-tag">&gt;_ agents</span>
             <h3>Multi-agent</h3>
-            <p>Claude Code and Cursor today — more on the way.</p>
+            <p>Claude Code, Codex and Cursor today — more on the way.</p>
         </div>
         <div class="ld-card">
             <span class="ld-tag">~3.8 MB</span>
