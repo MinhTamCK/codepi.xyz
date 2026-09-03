@@ -1,6 +1,6 @@
 ---
 image: https://codepi.xyz/assets/img/build-it-and-they-will-come-is-a-lie.jpg
-title: '"Build It and They Will Come" Is a Lie'
+title: “Build It and They Will Come” Is a Lie
 date: 2026-09-03
 tags:
   - startups
