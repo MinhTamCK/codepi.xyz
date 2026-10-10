@@ -111,5 +111,3 @@ The best public example I've seen came from a creative engineer at fal. They fin
 The title is new. The discipline underneath it isn't. You still build systems, test them, watch them fail and fix them. What changed is what counts as correct.
 
 *A software engineer makes the machine do what you said. A creative engineer makes it make what you meant.*
-
-*Cover generated with an image model, then picked from six candidates by eye.*
