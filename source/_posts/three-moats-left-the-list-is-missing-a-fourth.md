@@ -74,7 +74,3 @@ I don't read that as proof that moats are a myth. Speed and moats answer differe
 **Keep the records, not just the code.** Whatever you build with agents, the code is the part a copycat gets for free. What they don't get is the pile of failures, the rules written after each one, and the checks that now catch them. That record starts small, but it is proprietary data from day one, and it only grows if you write it down.
 
 A moat was never the water. It was the fact that there was one bridge, and you decided who crossed it. Agents can dig the same ditch around any castle now. They can't make anyone walk up the road to yours.
-
----
-
-*Header image: Jan Jacob Teyler van Hall, "Slot Batestein bij Vianen" (1840), Rijksmuseum, public domain.*

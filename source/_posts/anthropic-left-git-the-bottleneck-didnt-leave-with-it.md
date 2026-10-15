@@ -57,7 +57,3 @@ The same pattern shows up outside source control. The New Stack reported that Cl
 **For most teams git is fine.** Borrow the ideas instead: partial clones, sparse checkouts, no global locks that agents have to wait on.
 
 A canal lock lets one boat through at a time, and that worked as long as the boats came at the pace of the horses towing them. Anthropic widened the channel and took the gates out. Further down the river, someone still has to decide which boats should have come through at all.
-
----
-
-*Header image: John Constable, "Flatford Mill from the Lock" (c. 1810), Clark Art Institute, public domain.*
