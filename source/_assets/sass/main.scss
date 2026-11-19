@@ -1518,6 +1518,12 @@ img { max-width: 100%; height: auto; }
   cursor: grab;
 }
 
+// pointer-stir noise cells (see index.blade.php)
+.hero-art pre b {
+  font-weight: inherit;
+  color: var(--text);
+}
+
 .hero-text { flex: 1 1 auto; min-width: 0; }
 
 .hero-lead {

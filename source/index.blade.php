@@ -84,6 +84,47 @@
                     }
                 }, { threshold: 0 }).observe(art);
             }
+            // Pointer "stir" (after alma.now): cells near the cursor flicker into
+            // noise glyphs. glyphcss rewrites the <pre> as one text node every
+            // frame, so after each of its paints we re-write the cells around the
+            // pointer; its next frame restores them. Off under reduced motion
+            // (no frames would come to clear the noise).
+            if (!reduce) {
+                var NOISE = '01#%*+=:/\\|-_';
+                var px = 0, py = 0, stir = 0, noise = {}, noiseAt = 0;
+                var esc = function (c) { return c === '<' ? '&lt;' : c === '>' ? '&gt;' : c === '&' ? '&amp;' : c; };
+                art.addEventListener('pointermove', function (e) { px = e.clientX; py = e.clientY; stir = performance.now(); });
+                art.addEventListener('pointerleave', function () { stir = 0; });
+                new MutationObserver(function () {
+                    var pre = art.querySelector('pre');
+                    // Only react to glyphcss's own paint (a single text node), not ours.
+                    if (!pre || pre.childNodes.length !== 1 || pre.firstChild.nodeType !== 3) return;
+                    var now = performance.now();
+                    if (now - stir > 900) return;
+                    if (now - noiseAt > 50) { noise = {}; noiseAt = now; } // reshuffle ~20fps
+                    var lines = pre.textContent.split('\n');
+                    var cols = 0;
+                    for (var i = 0; i < lines.length; i++) cols = Math.max(cols, lines[i].length);
+                    var b = pre.getBoundingClientRect();
+                    if (!b.width || !b.height) return;
+                    var mx = (px - b.left) / b.width * cols, my = (py - b.top) / b.height * lines.length;
+                    var hit = false, out = [];
+                    for (var r = 0; r < lines.length; r++) {
+                        var line = lines[r], s = '';
+                        for (var k = 0; k < line.length; k++) {
+                            var ch = line[k];
+                            if (ch !== ' ' && Math.abs(r + 0.5 - my) < 2.5 && Math.abs(k + 0.5 - mx) < 4) {
+                                var key = r * 1000 + k;
+                                if (!(key in noise)) noise[key] = Math.random() < 0.6 ? NOISE[(Math.random() * NOISE.length) | 0] : '';
+                                if (noise[key]) { s += '<b>' + esc(noise[key]) + '</b>'; hit = true; continue; }
+                            }
+                            s += esc(ch);
+                        }
+                        out.push(s);
+                    }
+                    if (hit) pre.innerHTML = out.join('\n');
+                }).observe(art, { childList: true, subtree: true });
+            }
             var s = document.createElement('script');
             s.type = 'module';
             s.src = 'https://esm.sh/glyphcss@0.0.8/elements';
